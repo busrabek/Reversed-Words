@@ -3,10 +3,11 @@
 // const input = document.querySelector("p");
 
 
-function reverseString(string) {
+function reverseLetters(string) {
     console.log("Entering value:", string);
 
-    var splittedString = string.split(" "); // tırnak içinde boşluk olursa kelimeleri ters çevirir, boşluk olmazsa kelimedeki harfleri ters çevirir. 
+    //if it is not space between quotes, reverse the letters in the sentence.
+    var splittedString = string.split(""); 
     console.log(splittedString);
 
     var reversedArray = splittedString.reverse();
@@ -15,7 +16,26 @@ function reverseString(string) {
     var joinedArray = reversedArray.join(" ");
     console.log(joinedArray);
 
-    document.querySelector("#display-string").innerText = joinedArray;
+    document.querySelector("#display-letters").innerText = joinedArray;
+    
+}
+
+
+
+function reverseWords(string) {
+    console.log("Entering value:", string);
+
+    //if it is not space between quotes, reverse the words in the sentence.
+    var splittedString = string.split(" "); 
+    console.log(splittedString);
+
+    var reversedArray = splittedString.reverse();
+    console.log(reversedArray);
+
+    var joinedArray = reversedArray.join(" ");
+    console.log(joinedArray);
+
+    document.querySelector("#display-words").innerText = joinedArray;
     
 }
 
@@ -25,5 +45,9 @@ const button = document.querySelector("#submit-button");
 
 
 button.addEventListener("click", button => {
-    reverseString(input.value)
+    reverseLetters(input.value)
+});
+
+button.addEventListener("click", button => {
+    reverseWords(input.value)
 });
